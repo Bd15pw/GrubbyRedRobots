@@ -88,3 +88,4 @@ Zbiór.reverse()
 print(Zbiór)
 
 print(suma)
+print("zadanie3")
