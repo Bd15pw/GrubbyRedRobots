@@ -22,7 +22,7 @@ def clean_text(text):
   output = float(text.split(": ")[1])
   return output
   
-
+8
 
 
 def main():
@@ -32,4 +32,4 @@ def main():
   return clean_text(element.text)
 
 print(main())
-print() tt
+print() ttbbb
