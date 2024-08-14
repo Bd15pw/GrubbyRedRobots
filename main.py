@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
 
 def get_driver():
@@ -14,22 +15,18 @@ def get_driver():
 
 
   driver=webdriver.Chrome(options)
-  driver.get("http://automated.pythonanywhere.com")
+  driver.get("https://apps.powerapps.com/play/e/default-facac3c4-e2a5-4257-af76-205c8a821ddb/a/b06b201d-c7aa-4fb9-8400-3e5999985fb2?tenantId=facac3c4-e2a5-4257-af76-205c8a821ddb&source=AppSharedV3&hint=19f6ca8d-0213-463d-85e3-73e9c06e5518")
   return driver
 
-def clean_text(text):
-  """Extract only the temperature from text"""
-  output = float(text.split(": ")[1])
-  return output
-  
-8
+
 
 
 def main():
   driver = get_driver()
-  time.sleep(2)
-  element = driver.find_element(By.XPATH, "/html/body/div[1]/div/h1[2]")  
-  return clean_text(element.text)
+  #time.sleep(2)
+ # driver.find_element(By.ID, "id_username").send_keys("automated")  
+  #time.sleep(2)
+  #driver.find_element(By.ID, "id_password").send_keys("automatedautomated" + Keys.RETURN)
+  print(driver.current_url)
 
 print(main())
-print() ttbbb
