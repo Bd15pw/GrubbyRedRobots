@@ -18,9 +18,6 @@ def get_driver():
   driver.get("http://automated.pythonanywhere.com/login/")
   return driver
 
-def clean_text(text):
-  output= float(text.split(": ")[1])
-  return output
 
 
 
@@ -32,10 +29,6 @@ def main():
   driver.find_element(By.ID, "id_password").send_keys("automatedautomated" + Keys.RETURN)
   time.sleep(2)
   driver.find_element(By.XPATH, "/html/body/nav/div/a").click()
-  time.sleep(2)
-  text= driver.find_element(By.XPATH,"/html/body/div[1]/h1[2]").text
-  return clean_text(text)
-  
-  
+  print(driver.current_url)
 
 print(main())
