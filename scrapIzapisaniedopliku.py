@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
-from datetime import datetime as dt 
 
 def get_driver():
   #Set options 
@@ -16,27 +15,20 @@ def get_driver():
 
 
   driver=webdriver.Chrome(options)
-  driver.get("https://titan22.com/account/login")
+  driver.get("http://automated.pythonanywhere.com/login/")
   return driver
-
 
 
 
 
 def main():
   driver = get_driver()
-  
   time.sleep(2)
-  driver.find_element(By.ID, "CustomerEmail").send_keys("Bart.dziedzic15@gmail.com") 
+  driver.find_element(By.ID, "id_username").send_keys("automated")  
   time.sleep(2)
-  driver.find_element(By.ID, "CustomerPassword").send_keys("Bartek15pw"+ Keys.RETURN) 
-  driver.find_element(By.XPATH, "/html/body/footer/div/section/div/div[1]/div[1]/div[1]/nav/ul/li[1]/a").click()
+  driver.find_element(By.ID, "id_password").send_keys("automatedautomated" + Keys.RETURN)
   time.sleep(2)
+  driver.find_element(By.XPATH, "/html/body/nav/div/a").click()
   print(driver.current_url)
- 
- 
-  
-  
-  
 
 print(main())
