@@ -1,12 +1,11 @@
-from bs4 import BeautifulSoup
 import requests
 
-def get_currency(in_currency, out_curency): 
-  url = f'https://www.x-rates.com/calculator/?from={in_currency}&to={out_curency}&amount=1'
-  content = requests.get(url).text
-  soup = BeautifulSoup(content,'html.parser')
-  currency = soup.find("span", class_="ccOutputRslt").get_text()
-  currency=float(currency[0: -4])
-  return currency
+r = requests.get('https://rickandmortyapi.com/api/character')
 
-print(get_currency("PLN", "USD"))
+content = r.json()
+characters = content['results']
+
+
+
+for x in characters:
+  print(x['name'] +": "+ x['location']['name'])
