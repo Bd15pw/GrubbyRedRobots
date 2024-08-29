@@ -9,3 +9,4 @@ characters = content['results']
 
 for x in characters:
   print(x['name'] +": "+ x['location']['name']['name'])
+  print(x['name'])
