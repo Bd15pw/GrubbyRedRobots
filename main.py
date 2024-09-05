@@ -12,5 +12,5 @@ def getWeather(city,units='metric', api_key='13ab70d1ba6b1c1421505657c5d5d548'):
   
   
 
-print(getWeather(city="Wrocław"))
+print(getWeather(city="Warszawa"))
   
