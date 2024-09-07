@@ -1,3 +1,6 @@
+# Importujemy pathlib i zaczynamy prace z plikiem, ustawiamy sobie  root do scieżki root_dir, root_dir.iterdir() iteruje nam po plikach w folderze i pentlą sobie przechodzimy i zmieniamy nazwe pliku. Outputem jest zmiana nazwy pliku w folderze 
+
+
 from pathlib import Path
 
 root_dir= Path('files')
